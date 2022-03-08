@@ -1,12 +1,12 @@
 # Log4j
-#### 日志按照天去存放
-https://blog.csdn.net/csdnluolei/article/details/87696391
+## 日志按照天去存放
+[https://blog.csdn.net/csdnluolei/article/details/87696391](https://blog.csdn.net/csdnluolei/article/details/87696391)
 # Logback
-Logback是由log4j创始人设计的另一个开源日志组件,官方网站： http://logback.qos.ch
-#### 日志按照天去存放
-https://blog.csdn.net/hechaojie_com/article/details/97758541
+Logback是由log4j创始人设计的另一个开源日志组件,官方网站： [http://logback.qos.ch](http://logback.qos.ch)
+## 日志按照天去存放
+[https://blog.csdn.net/hechaojie_com/article/details/97758541](https://blog.csdn.net/hechaojie_com/article/details/97758541)
 
-#### logback取代log4j的理由：
+## logback取代log4j的理由：
 1. 更快的实现：Logback的内核重写了，在一些关键执行路径上性能提升10倍以上。而且logback不仅性能提升了，初始化内存加载也更小了。
 2. 非常充分的测试：Logback经过了几年，数不清小时的测试。Logback的测试完全不同级别的。
 3. Logback-classic非常自然实现了SLF4j：Logback-classic实现了SLF4j。在使用SLF4j中，你都感觉不到logback-classic。而且因为logback-classic非常自然地实现了slf4j ， 所 以切换到log4j或者其他，非常容易，只需要提供成另一个jar包就OK，根本不需要去动那些通过SLF4JAPI实现的代码。
