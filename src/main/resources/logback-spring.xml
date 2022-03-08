@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
-    <property name="LOG_HOME" value="${log.home}"/>
-
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n</pattern>
@@ -15,7 +13,7 @@
         <file>/home/yscredit/tomcat/logs/demo/logback-demo.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>/home/yscredit/tomcat/logs/demo/logback-demo_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <!--            <MaxHistory>120</MaxHistory>-->
+            <MaxHistory>120</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>500MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
@@ -37,7 +35,9 @@
 
             <!-- 归档的日志文件的路径，%d{yyyy-MM-dd}指定日期格式，%i指定索引 -->
             <fileNamePattern>/home/yscredit/tomcat/logs/demo/logback-demo-error_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <!--            <MaxHistory>120</MaxHistory>-->
+
+            <!--保留的最大文件数量-->
+            <MaxHistory>120</MaxHistory>
 
             <!-- 除按日志记录之外，还配置了日志文件不能超过500MB，若超过500MB，日志文件会以索引0开始，
             命名日志文件，例如logback-demo-error_2022-3-8.0.log -->
@@ -58,8 +58,6 @@
         <!-- 过滤，此日志文件只记录error级别的 -->
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
 
