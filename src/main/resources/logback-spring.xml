@@ -15,7 +15,7 @@
         <file>/home/yscredit/tomcat/logs/demo/logback-demo.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>/home/yscredit/tomcat/logs/demo/logback-demo_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <MaxHistory>120</MaxHistory>
+            <!--            <MaxHistory>120</MaxHistory>-->
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>500MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
