@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
-    <springProperty scope="context" name="LOG_PATH" source="log.path"
+    <springProperty scope="context" name="LOG_PATH" source="logging.file.path"
                     defaultValue="/home/yscredit/tomcat/logs/demo-yml"/>
     <springProperty scope="context" name="LOG_PATTERN_CONSOLE" source="logging.pattern.console"
                     defaultValue="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n"/>
