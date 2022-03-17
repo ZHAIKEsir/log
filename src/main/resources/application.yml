@@ -5,3 +5,7 @@ server:
 logging:
   ##指定logback配置路径, 可放置classpath下
   config: classpath:logback-spring.xml
+  file:
+    path: /home/yscredit/tomcat/logs/demo-yml
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n"

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
+    <springProperty scope="context" name="LOG_PATH" source="log.path"
+                    defaultValue="/home/yscredit/tomcat/logs/demo-yml"/>
+    <springProperty scope="context" name="LOG_PATTERN_CONSOLE" source="logging.pattern.console"
+                    defaultValue="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n"/>
+
     <!--<appender>是负责写日志的组件，有三种策略-->
     <!--ConsoleAppender把日志添加到控制台-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n</pattern>
+            <pattern>${LOG_PATTERN_CONSOLE}</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -13,9 +18,9 @@
     <!--FileAppender 把日志添加到文件-->
     <!--RollingFileAppender 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件-->
     <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/home/yscredit/tomcat/logs/demo/logback-demo.log</file>
+        <file>${LOG_PATH}/logback-demo.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/home/yscredit/tomcat/logs/demo/logback-demo_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/logback-demo_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <MaxHistory>120</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>500MB</maxFileSize>
@@ -31,13 +36,13 @@
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
 
         <!-- 正在记录的日志文件的路径及文件名 -->
-        <file>/home/yscredit/tomcat/logs/demo/logback-demo-error.log</file>
+        <file>${LOG_PATH}/logback-demo-error.log</file>
 
         <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 
             <!-- 归档的日志文件的路径，%d{yyyy-MM-dd}指定日期格式，%i指定索引 -->
-            <fileNamePattern>/home/yscredit/tomcat/logs/demo/logback-demo-error_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/logback-demo-error_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 
             <!--保留的最大文件数量-->
             <MaxHistory>120</MaxHistory>
