@@ -2,7 +2,15 @@
 ## 日志按照天去存放
 [https://blog.csdn.net/csdnluolei/article/details/87696391](https://blog.csdn.net/csdnluolei/article/details/87696391)
 # Logback
-Logback是由log4j创始人设计的另一个开源日志组件,官方网站： [http://logback.qos.ch](http://logback.qos.ch)
+Logback是由log4j创始人设计的另一个开源日志组件
+
+**官方网站：** [http://logback.qos.ch](http://logback.qos.ch)
+
+**中文文档：**
+
+[https://www.docs4dev.com/docs/zh/logback/1.3.0-alpha4/reference/configuration.html
+](https://www.docs4dev.com/docs/zh/logback/1.3.0-alpha4/reference/configuration.html
+)
 ## 日志按照天去存放
 [https://blog.csdn.net/hechaojie_com/article/details/97758541](https://blog.csdn.net/hechaojie_com/article/details/97758541)
 
