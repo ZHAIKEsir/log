@@ -1,0 +1,7 @@
+server:
+  port: 80
+
+# 定义日志级别
+logging:
+  ##指定logback配置路径, 可放置classpath下
+  config: classpath:logback-spring.xml
